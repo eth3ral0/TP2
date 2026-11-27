@@ -24,14 +24,12 @@ const stateDefault = [
         current: "18",
         max: "50",
         type: "xp"
-    }
+    },
 
-]
+];
 
-export default function StatBars() {
-    return (
-            stateDefault.map((stat) => {
-                return <StatBar key={stat.name} {...stat} /> /*Identifiant unique est le name */
-            })
-    );
+export default function StatBars({stats = stateDefault}) {
+    return stats.map((stat) => (
+                <StatBar key={stat.name} {...stat} /> /*Identifiant unique est le name */
+        ));
 }

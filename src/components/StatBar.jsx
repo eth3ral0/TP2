@@ -2,7 +2,7 @@ import './StatBar.css'
 export default function StatBar(
     {name, current, max, type}
 ){
-    const tauxRemplissage = (current/max) * 100;
+    const tauxRemplissage = Math.min((current/max) * 100, 100);
 
     return <div className={`stat-bar stat-bar--${type}`}>
         <div className={"stat-bar__label"}>
